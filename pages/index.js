@@ -2,7 +2,7 @@
 import express from 'express';
 
 function Home() {
-    return "<h1>Teste</h1>";
+    return "<h1>Diego Sayron</h1>";
 }
 
 const app = express();
