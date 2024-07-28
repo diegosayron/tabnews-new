@@ -1,0 +1,16 @@
+{
+  "name": "tabnews",
+  "version": "1.0.0",
+  "main": "pages/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node pages/index.js",
+    "dev": "nodemon pages/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
