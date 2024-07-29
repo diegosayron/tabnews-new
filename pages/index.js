@@ -5,7 +5,7 @@ function Home() {
     return '<h1>Diego Sayron</h1>';
 }
 
-const app = express();
+/* const app = express();
 const port = process.env.PORT || 3001;
 
 app.get('/', (req, res) => {
@@ -15,5 +15,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
-
+*/
 export default Home;
