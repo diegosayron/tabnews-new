@@ -4,11 +4,9 @@
   "main": "pages/index.js",
   "type": "module",
   "scripts": {
-    "start": "node pages/index.js",
-    "dev": "nodemon pages/index.js"
+    "dev": "next dev"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
