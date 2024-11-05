@@ -14,8 +14,9 @@ async function query(queryObject) {
                                                          //E guardaremos na variável result
         return result;
     } 
-    catch(err) {
-        console.log(err);
+    catch(error) {
+        console.log(error);
+        throw error;
     }
     finally {
         await client.end(); //para finalizar a conexão          
