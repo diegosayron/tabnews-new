@@ -8,9 +8,9 @@ async function query(queryObject) {
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB,
         connectionTimeoutMillis: 10000, // Timeout para a conexão
-        ssl: {
+        /*ssl: {
             rejectUnauthorized: false // Para evitar problemas com certificados autoassinados
-        }
+        }*/
     });
     try {
         await client.connect();
