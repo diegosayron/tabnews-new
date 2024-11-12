@@ -8,6 +8,11 @@ async function query(queryObject) {
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB,
     });
+    onsole.log(process.env.POSTGRES_HOST,
+        process.env.POSTGRES_PORT,
+        process.env.POSTGRES_USER,
+        process.env.POSTGRES_PASSWORD,
+        process.env.POSTGRES_DB);
     try {
         await client.connect();
         const result = await client.query(queryObject);   //vamos passar um queryObject, que vem lá da assinatura do método  e vem pela função query.
