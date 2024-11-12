@@ -7,9 +7,7 @@ async function query(queryObject) {
         user: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB,
-        ssl:{
-            rejectUnauthorized: false // Para evitar problemas com certificados autoassinados
-        },
+        ssl: process.env.NODE_ENV === 'development' ? false: true,
     });
     
     /*console.log(process.env.POSTGRES_HOST,
