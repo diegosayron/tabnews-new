@@ -8,7 +8,7 @@ async function query(queryObject) {
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB,
     });
-    onsole.log(process.env.POSTGRES_HOST,
+    console.log(process.env.POSTGRES_HOST,
         process.env.POSTGRES_PORT,
         process.env.POSTGRES_USER,
         process.env.POSTGRES_PASSWORD,
