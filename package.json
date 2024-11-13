@@ -2,7 +2,6 @@
   "name": "tabnews",
   "version": "1.0.0",
   "main": "pages/index.js",
-  "type": "module",
   "scripts": {
     "dev": "npm run services:up && next dev",
     "services:up": "docker compose -f infra/compose.yaml up -d",
@@ -11,10 +10,15 @@
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "migration:create": "node-pg-migrate -m infra/migrations create",
+    "migration:up": "node-pg-migrate -m infra/migrations --env-Path .env.development up",
+    "migration:down": "node-pg-migrate -m infra/migrations --env-Path .env.development down"
   },
   "dependencies": {
+    "dotenv": "^16.4.4",
     "next": "^13.1.6",
+    "node-pg-migrate": "^6.2.2",
     "pg": "^8.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

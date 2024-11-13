@@ -7,7 +7,7 @@ async function query(queryObject) {
         user: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB,
-        ssl: process.env.NODE_ENV === 'development' ? false : {rejectUnauthorized: false},
+        ssl: getSSLValues(),
     });
     
     /*console.log(process.env.POSTGRES_HOST,
@@ -40,3 +40,15 @@ export default {
     query: query,
 };
 
+
+function getSSLValues() {
+    //Dependendo do ambiente, se houver POSTGRES_CA, é porque é ambiente de produção.
+    if (process.env.POSTGRES_CA) {
+        return {
+            ca: process.env.POSTGRES_CA,
+        };
+    }
+
+    //Caso contrário, entra em outro return, local e sem ssl:
+    return process.env.NODE_ENV === "development" ? false : true;
+}
