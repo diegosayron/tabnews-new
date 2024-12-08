@@ -6,4 +6,5 @@ test("Get to api/v1/migrations must return 200", async () => {
     const responseBody = await response.json();
     //espero receber uma lista de migrations que estão pendentes. Sendo uma lista, é um array:
     expect(Array.isArray(responseBody)).toBe(true);
+    expect(responseBody.length).toBeGreaterThan(0);
 });
